@@ -18,10 +18,17 @@ try{
         if ($Fix){
             # Fix last line and trim spaces
             npm run eclint-fix
+            if ($LASTEXITCODE -ne 0){
+                throw "Editor config text rules fixing failed"
+            }
         }
 
         # Checking everything else
         npm run eclint-check
+        if ($LASTEXITCODE -ne 0){
+            throw "Editor config text rules check failed"
+        }
+
     }
     finally {
         Pop-Location > $null
