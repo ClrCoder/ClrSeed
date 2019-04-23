@@ -22,7 +22,11 @@
     PowerShellVersion = '5.1'
 
     # Functions to export from this module
-    FunctionsToExport = @()
+    FunctionsToExport = @(
+        'Compare-ByteArrays',
+        'Get-XmlFile',
+        'Set-XmlFile'
+    )
 
     # Cmdlets to export from this module
     CmdletsToExport   = @()
