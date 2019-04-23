@@ -1,4 +1,4 @@
-$utf8NoBom = New-Object System.Text.UTF8Encoding $true
+$utf8NoBom = New-Object System.Text.UTF8Encoding $false
 
 Add-Type -Language CSharp @"
 namespace Shame
@@ -37,8 +37,9 @@ function Get-XmlFile {
         [string]$Path
     )
 
-    $textReader = new-object System.IO.StreamReader $Path
+    $textReader = new-object System.IO.StreamReader $Path, $utf8NoBom, $true
     try {
+        $textReader.Peek()
         $currentEncoding = $textReader.CurrentEncoding
         $xml = New-Object System.Xml.XmlDocument
         $xml.PreserveWhitespace = $true
