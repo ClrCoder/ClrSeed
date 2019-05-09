@@ -26,7 +26,7 @@ function Invoke-GitCommand {
                 Push-Location $Cwd
             }
 
-            $allOutput = git.exe $Arguments 2>&1
+            $allOutput = git $Arguments 2>&1
             $stderr = $allOutput | Where-Object { $_ -is [System.Management.Automation.ErrorRecord] }
             $stdout = $allOutput | Where-Object { $_ -isnot [System.Management.Automation.ErrorRecord] }
 
