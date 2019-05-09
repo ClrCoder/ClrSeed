@@ -25,7 +25,9 @@
     FunctionsToExport = @(
         'Compare-ByteArrays',
         'Get-XmlFile',
-        'Set-XmlFile'
+        'Set-XmlFile',
+        'Invoke-GitCommand',
+        'Invoke-HgCommand'
     )
 
     # Cmdlets to export from this module

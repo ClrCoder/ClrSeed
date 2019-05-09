@@ -1,3 +1,6 @@
+. ("$PSScriptRoot/git/git-base.ps1")
+. ("$PSScriptRoot/hg/hg-base.ps1")
+
 $utf8NoBom = New-Object System.Text.UTF8Encoding $false
 
 Add-Type -Language CSharp @"
@@ -107,7 +110,9 @@ $exportModuleMemberParams = @{
     Function = @(
         'Compare-ByteArrays',
         'Get-XmlFile',
-        'Set-XmlFile'
+        'Set-XmlFile',
+        'Invoke-GitCommand',
+        'Invoke-HgCommand'
     )
 
     Variable = @(
