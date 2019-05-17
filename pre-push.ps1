@@ -33,6 +33,7 @@ try{
     Write-Host
     Write-Host "Checking commits history rules" -ForegroundColor Green
     &"$rulesRoot/vcs/no-relative-issue-refs.ps1"
+    &"$rulesRoot/vcs/no-unknown-authors.ps1"
 
     Write-Host
     Write-Host "Checking and applying '*.sln' files rules" -ForegroundColor Green
